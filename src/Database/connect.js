@@ -1,4 +1,4 @@
-const sql = require('mssql')
+const sql = require('mssql/msnodesqlv8')
 
 // const conn = async () => {
 //     try {
@@ -15,10 +15,8 @@ const config = {
     password: 'sa2012',
     server: 'T460S\\SQLEXPRESS',
     database: 'ClothesShop',
-    driver: "msnodesqlv8",
     options: {
         trustedConnection: true,
-        useUTC: true
     }
 }
 

@@ -1,7 +1,9 @@
 import express from "express"
 import viewConfig from "./config/viewEngine"
-import bodyParser from "body-parser"
-import initRouter from "./router/web"
+// import bodyParser from "body-parser"
+const bodyParser = require("body-parser");
+import initProductRoutes from "./router/product"
+const initRouterAcount = require("./router/acount")
 
 require("dotenv").config();
 
@@ -9,9 +11,10 @@ let app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 viewConfig(app);
-initRouter(app)
+initRouterAcount(app)
+initProductRoutes(app)
 
-
+// config port
 let port = process.env.PORT || 6969;
 // if port ===undefind => port 6969
 
